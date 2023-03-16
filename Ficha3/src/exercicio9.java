@@ -5,9 +5,26 @@ import java.util.Scanner;
         Exemplo:
         Valores lidos:
         10 (limite) e 3 (salto)Saída do algoritmo: 0 3 6 9
- */
-public class Main {
+        */
+
+public class exercicio9 {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Scanner input = new Scanner(System.in);
+
+        int n=0,n1,jump;
+
+        System.out.println("Enter your number");
+        n1 = input.nextInt();
+        System.out.println("Enter the jump number");
+        jump = input.nextInt();
+
+        while(n < n1 ){
+                n = n + jump;
+                System.out.println(n);
+
+        }
+
+
+        }
     }
-}
