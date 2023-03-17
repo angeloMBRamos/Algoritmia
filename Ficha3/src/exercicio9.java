@@ -5,7 +5,7 @@ import java.util.Scanner;
         Exemplo:
         Valores lidos:
         10 (limite) e 3 (salto)Saída do algoritmo: 0 3 6 9
-        */
+*/
 
 public class exercicio9 {
     public static void main(String[] args) {
