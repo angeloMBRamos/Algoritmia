@@ -13,8 +13,8 @@ public class exercicio1 {
         Scanner input = new Scanner(System.in);
 
         int n1, n2, result;
-        String operator;
-        boolean s = true;
+        String operator, choice;
+
 
         do {
             System.out.println("Enter a number");
@@ -23,33 +23,35 @@ public class exercicio1 {
             n2 = input.nextInt();
             System.out.println("Enter your operator");
             operator= input.next();
-        }while (n1 > 0);
-        switch (operator){
-            case "+": if(operator == "+") {
-                result = n1 + n2;
-                System.out.println(result);
-                break;
-            }
-            case "-": if(operator == "-"){
-                result = n1 - n2;
-                System.out.println(result);
-                break;
-            }
-            case "*": if(operator == "*"){
-                result = n1 * n2;
-                System.out.println(result);
-                break;
-            }
-            case "/": if(operator == "/"){
-                result = n1 / n2;
-                System.out.println(result);
-                break;
-            }
-            default:
-                System.out.println("Invalid operator");
-        }
 
+            switch (operator){
+                case "+":
+                    result = n1 + n2;
+                    System.out.println(result);
+                    break;
 
+                case "-":
+                    result = n1 - n2;
+                    System.out.println(result);
+                    break;
+
+                case "*":
+                    result = n1 * n2;
+                    System.out.println(result);
+                    break;
+
+                case "/":
+                    result = n1 / n2;
+                    System.out.println(result);
+                    break;
+
+                default:
+                    System.out.println("Invalid operator");
+            }
+            System.out.println("Wish to continue?");
+            choice = input.next();
+
+        } while (choice.equals("s"));
 
 
 
