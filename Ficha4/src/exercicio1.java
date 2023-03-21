@@ -12,13 +12,46 @@ public class exercicio1 {
 
         Scanner input = new Scanner(System.in);
 
-        int n1, n2;
-        String option;
+        int n1, n2, result;
+        String operator;
+        boolean s = true;
 
-        System.out.println("Enter your a number");
-        n1 = input.nextInt();
-        System.out.println("Enter another number");
-        n2 = input.nextInt();
+        do {
+            System.out.println("Enter a number");
+            n1 = input.nextInt();
+            System.out.println("Enter another number");
+            n2 = input.nextInt();
+            System.out.println("Enter your operator");
+            operator= input.next();
+        }while (n1 > 0);
+        switch (operator){
+            case "+": if(operator == "+") {
+                result = n1 + n2;
+                System.out.println(result);
+                break;
+            }
+            case "-": if(operator == "-"){
+                result = n1 - n2;
+                System.out.println(result);
+                break;
+            }
+            case "*": if(operator == "*"){
+                result = n1 * n2;
+                System.out.println(result);
+                break;
+            }
+            case "/": if(operator == "/"){
+                result = n1 / n2;
+                System.out.println(result);
+                break;
+            }
+            default:
+                System.out.println("Invalid operator");
+        }
+
+
+
+
 
 
     }
