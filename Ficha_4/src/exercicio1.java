@@ -1,12 +1,12 @@
-package src;
-
 import java.util.Scanner;
+
 /*Implemente  um  programa  que  peça  ao  utilizador  dois  valores  e  um  carácter  representando
 uma das  quatro  operações aritméticas (+, -,  *,  /).  Apresente  o  resultado  de  aplicar a
 operação correspondente  aos  valores.  No  final, deverá  perguntar  ao  utilizador  se  deseja  repetir,
 permitindo-lhe efetuar novos cálculos.
 Exemplo:Deseja continuar? (introduza s/n).
  */
+
 public class exercicio1 {
     public static void main(String[] args) {
 
@@ -23,6 +23,10 @@ public class exercicio1 {
             n2 = input.nextInt();
             System.out.println("Enter your operator");
             operator= input.next();
+            do {
+                System.out.println("Enter a valid operator");
+                operator = input.next();
+            }while(!operator.equals("+") && !operator.equals("-") && !operator.equals("*") && !operator.equals("/"));
 
             switch (operator){
                 case "+":
@@ -52,8 +56,6 @@ public class exercicio1 {
             choice = input.next();
 
         } while (choice.equals("s"));
-
-
 
 
     }
