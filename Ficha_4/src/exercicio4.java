@@ -9,26 +9,27 @@ public class exercicio4 {
 
         Scanner input = new Scanner(System.in);
 
-        int n, multiplo=0;
+        int n;
+        boolean primo = true;
 
         System.out.println("Enter a number");
         n = input.nextInt();
 
-        if(n < 1){
-            multiplo=1;
+        if(n <= 1){
+            primo=false;
         }
 
         for (int i = 2; i < n; i++) {
             if(n%i == 0) {
-                multiplo=1;
+                primo=false;
             }
 
             }
 
-        if (multiplo == 1){
-            System.out.println(" The number " + n + " is not prime");
+        if (primo==true){
+            System.out.println(" The number " + n + " is prime");
         }else {
-            System.out.println("The number " + n + " is prime");
+            System.out.println("The number " + n + " is not prime");
         }
 
         }
