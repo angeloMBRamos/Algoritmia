@@ -1,114 +1,94 @@
+//Import da biblioteca Scanner para o utilizador poder introduzir dados
 import java.util.Scanner;
 
 public class exercicio {
     public static void main(String[] args) {
 
+        //Instância da classe para o utilizador poder introduzir os valores
         Scanner input = new Scanner(System.in);
 
-        int nQuarto, diasReserva, totalLimpeza, totalReserva;
-        double vLiquido, imposto;
+        //Declarar as variáveis
+        int nQuarto, diasReserva, totalLimpeza=0, totalReserva=0;
+        double vLiquido=0, imposto=0;
         String tipo;
 
+        System.out.println("\nHotel ***** Temático - Mundo de Chocolate\n");
 
-        System.out.println("Quantos dias esteve hospedado?");
-        diasReserva = input.nextInt();
+        //Ler a variável nQuarto
         System.out.println("Introduza o numero do quarto");
         nQuarto = input.nextInt();
-        System.out.println("Qual o tipo de quarto que esteve hospedado?");
+        //Ler a variável diasReserva
+        System.out.println("Quantos dias o quarto esteve ocupado?");
+        diasReserva = input.nextInt();
+        //Ler a variável tipo
+        System.out.println("Qual o tipo de quarto?");
         tipo = input.next();
 
+        //Switch para selecionar o caso que se adequa à variável tipo
         switch (tipo){
 
             case "I":
                 totalReserva = (diasReserva*200);
-                System.out.println("O total iliquido deste quarto é " + totalReserva);
                 totalLimpeza =  diasReserva*25;
-                System.out.println("O custo total da limpeza é de " + totalLimpeza);
                 if(totalReserva<=20000){
                     imposto = (totalReserva - totalLimpeza) * 0.23;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
-                } else if (totalReserva>20000 && totalReserva<=50000) {
+                }else if(totalReserva>20000 && totalReserva<=50000) {
                     imposto = (totalReserva - totalLimpeza) * 0.25;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
                 }else {
                     imposto = (totalReserva - totalLimpeza) * 0.28;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
                 }
                 break;
             case "D":
                 totalReserva = (diasReserva*250);
-                System.out.println("O total iliquido deste quarto é " + totalReserva);
-                totalLimpeza =  diasReserva*25;
-                System.out.println("O custo total da limpeza é de " + totalLimpeza);
+                totalLimpeza =  diasReserva*30;
                 if(totalReserva<=20000){
                     imposto = (totalReserva - totalLimpeza) * 0.23;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
-                } else if (totalReserva>20000 && totalReserva<=50000) {
+                }else if(totalReserva>20000 && totalReserva<=50000) {
                     imposto = (totalReserva - totalLimpeza) * 0.25;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
                 }else {
                     imposto = (totalReserva - totalLimpeza) * 0.28;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
                 }
                 break;
             case "T":
                 totalReserva = (diasReserva*275);
-                System.out.println("O total iliquido deste quarto é " + totalReserva);
-                totalLimpeza =  diasReserva*25;
-                System.out.println("O custo total da limpeza é de " + totalLimpeza);
+                totalLimpeza =  diasReserva*30;
                 if(totalReserva<=20000){
                     imposto = (totalReserva - totalLimpeza) * 0.23;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
-                } else if (totalReserva>20000 && totalReserva<=50000) {
+                }else if(totalReserva>20000 && totalReserva<=50000) {
                     imposto = (totalReserva - totalLimpeza) * 0.25;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
                 }else {
                     imposto = (totalReserva - totalLimpeza) * 0.28;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
                 }
                 break;
-
             case "S":
                 totalReserva = (diasReserva*350);
-                System.out.println("O total iliquido deste quarto é " + totalReserva);
-                totalLimpeza =  diasReserva*25;
-                System.out.println("O custo total da limpeza é de " + totalLimpeza);
+                totalLimpeza =  diasReserva*50;
                 if(totalReserva<=20000){
                     imposto = (totalReserva - totalLimpeza) * 0.23;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
-                } else if (totalReserva>20000 && totalReserva<=50000) {
+                }else if(totalReserva>20000 && totalReserva<=50000) {
                     imposto = (totalReserva - totalLimpeza) * 0.25;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
                 }else {
                     imposto = (totalReserva - totalLimpeza) * 0.28;
-                    System.out.println("O imposto a entregar ao Estado é de " + imposto);
                     vLiquido =(totalReserva - totalLimpeza) - imposto;
-                    System.out.println("O valor liquido a receber pelo quarto é de " + vLiquido);
                 }
                 break;
+            default:
+                System.out.println("Escolha um tipo de quarto válido");
         }
-
+        System.out.println("O total iliquido deste quarto são €" + totalReserva);
+        System.out.println("O custo total de limpeza deste quarto são €" + totalLimpeza);
+        System.out.println("O imposto a entregar ao Estado referente a este quarto são €" + imposto);
+        System.out.println("O valor liquido a receber pelo quarto são €" + vLiquido);
     }
 }
