@@ -13,7 +13,7 @@ public class exercicio3 {
 
         Scanner input = new Scanner(System.in);
 
-        int numJogador1, numJogador2;
+        int numJogador1, numJogador2, nTentativas=0;
 
         do {
             System.out.println("\n---------------Let's play the game Guess a number---------------\n");
@@ -32,10 +32,12 @@ public class exercicio3 {
                 System.out.println("Enter another number");
                 numJogador2 = input.nextInt();
 
+                nTentativas++;
+
             }while(numJogador2 != numJogador1);
 
             if(numJogador2 == numJogador1){
-                System.out.println("Great!! That's the right number");
+                System.out.println("Great!! That's the right number and you used " + nTentativas + " attempts to guess it!!!");
             }
 
         }while (numJogador2 != numJogador1);
