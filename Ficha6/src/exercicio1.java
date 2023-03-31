@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 //Implemente uma função que determine se um número (passado por argumento) é par ou ímpar.
 public class exercicio1 {
-   public static void parOuImpar(int num){
+   public static boolean parOuImpar(int num){
+
        if(num%2==0){
-           System.out.println("The number is par");
+           return true;
        }else{
-           System.out.println("The number is impar");
+           return false;
        }
    }
     public static void main(String[] args) {
@@ -18,7 +19,11 @@ public class exercicio1 {
         System.out.println("Introduz um numero");
         num = input.nextInt();
 
-        parOuImpar(num);
+        if(parOuImpar(num)){
+            System.out.println("O numero é par");
+        }else {
+            System.out.println("O numero é impar");
+        }
 
     }
 }

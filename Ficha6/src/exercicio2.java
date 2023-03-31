@@ -3,11 +3,11 @@ import java.util.Scanner;
 //Implemente uma função que determine se um número (passado por argumento) é positivo ou negativo.
 public class exercicio2 {
 
-    public static void positivoOuNegativo(int num){
+    public static boolean positivoOuNegativo(int num){
         if(num<0){
-            System.out.println("O numero " + num +  " é negativo.");
+            return true;
         }else{
-            System.out.println("O número " + num + " é positivo.");
+            return false;
         }
     }
     public static void main(String[] args) {
@@ -18,6 +18,12 @@ public class exercicio2 {
 
         System.out.println("Introduz um numero");
         num = input.nextInt();
-        positivoOuNegativo(num);
+
+        if(positivoOuNegativo(num)){
+            System.out.println("O numero é negativo.");
+        }else {
+            System.out.println("O número é positivo.");
+        }
+        }
     }
-}
+
