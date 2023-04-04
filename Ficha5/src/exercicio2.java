@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+//Implemente um programa que permita adicioanr o preço de produtos
+// a um array de tamanho 10 e calcular o seu total.
+
 public class exercicio2 {
     public static void main(String[] args) {
 

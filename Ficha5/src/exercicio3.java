@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//Escreva um programa que lê um array de tamanho 10 e encontra o maior elemento.
+
 
 public class exercicio3 {
     public static void main(String[] args) {

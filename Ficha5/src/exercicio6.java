@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+//Escreva um programa que lê um array de tamanho 10 e verifica
+// se os elementos estão em ordem crescente.
+
 public class exercicio6 {
     public static void main(String[] args) {
 

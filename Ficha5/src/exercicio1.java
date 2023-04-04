@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+// Implemente um programa que permita adicionar 10 números inteiros
+// a um array e que os imprima pela ordem de inserção.
+
 public class exercicio1 {
     public static void main(String[] args) {
 
