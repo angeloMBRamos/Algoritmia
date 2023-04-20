@@ -3,6 +3,10 @@ import java.io.FileNotFoundException;
 import java.util.Formatter;
 import java.util.Scanner;
 
+/*
+Escreva um programa que crie um ficheiro de texto e escreva nele uma mensagem.
+ */
+
 public class ex2 {
 
     public static void createFile(String pathFile) throws FileNotFoundException {

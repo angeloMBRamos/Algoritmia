@@ -2,6 +2,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/*
+Escreva um programa que leia o conteúdo de um ficheiro de texto e imprima
+na consola. Escreva um programa que leia o conteúdo de um ficheiro de texto e
+imprima na consola.
+ */
+
 public class ex1 {
 
     public static void readFile() throws FileNotFoundException {
@@ -11,8 +17,7 @@ public class ex1 {
         while(openFile.hasNext()){
             System.out.println(openFile.nextLine());
         }
-
-
+        openFile.close();
     }
 
 
