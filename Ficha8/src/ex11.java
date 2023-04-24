@@ -45,7 +45,6 @@ public class ex11 {
             matrix[i][3] = itemsOfTheLine[3];
             i++;
         }
-
         //Prints the matrix
         for (int j = 0; j < matrix.length; j++) {
             for (int k = 0; k < matrix[0].length; k++) {
@@ -55,6 +54,12 @@ public class ex11 {
         }
         readFileAgain.close();
     }
+
+        public static void musicByGender(String gender) throws FileNotFoundException {
+            File file = new File("exercicio_11.csv");
+            Scanner readFile = new Scanner(file);
+        }
+
 
     public static void menu(){
 
