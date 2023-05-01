@@ -45,13 +45,13 @@ public class ex6 {
             System.out.println("");
         }
 
-        //Another way to print the matrix
+        /*Another way to print the matrix
         for (int j = 0; j < matrix.length; j++) {
             for (int k = 0; k < matrix[0].length; k++) {
                 System.out.print(matrix[j][k]+"\t");
             }
             System.out.println("");
-        }
+        }*/
 
         for (int j = 0; j < matrix.length; j++) {
             System.out.println("I'm comparing "+matrix[j][1]+" with "+oldest);
