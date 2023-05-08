@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 public class Imovel {
     private String rua, porta, cidade;
-    double area=0, areaPiscina, valorImovel;
+    double area, areaPiscina, valorImovel;
     int nQuarto, nWC;
     Tipo tipo;
     Acabamento acabamento;
@@ -64,7 +64,7 @@ public class Imovel {
 
     public double calcularValor(){
          if(this.tipo.equals(Tipo.APARTAMENTO)){
-             this.valorImovel=area*1000 + nQuarto*7500 + nWC*10500 + areaPiscina*1000;
+             this.valorImovel=this.area*1000 + this.nQuarto*7500 + this.nWC*10500 + this.areaPiscina*1000;
              if(this.acabamento.equals(Acabamento.RESTAURO)){
                  this.valorImovel*=0.5;
              } else if (this.acabamento.equals(Acabamento.USADA)) {
@@ -93,7 +93,7 @@ public class Imovel {
                  this.valorImovel*=1.25;
              }
          }
-         return valorImovel;
+         return this.valorImovel;
     }
 
     public void setAcabamento(Acabamento acabamento) {
