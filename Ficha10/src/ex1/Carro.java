@@ -5,16 +5,17 @@ import java.sql.SQLOutput;
 public class Carro {
 
 private String marca, modelo;
-private int anoFabrico, potencia, km;
-private double cilindrada;
+private int anoFabrico, potencia;
+private double cilindrada, consumo;
 private Combustivel combustivel;
 
-    public Carro(String marca, String modelo, int anoFabrico, int potencia, double cilindrada, Combustivel combustivel) {
+    public Carro(String marca, String modelo, int anoFabrico, int potencia, double cilindrada, double consumo, Combustivel combustivel) {
         this.marca = marca;
         this.modelo = modelo;
         this.anoFabrico = anoFabrico;
         this.potencia=potencia;
         this.cilindrada=cilindrada;
+        this.consumo=consumo;
         this.combustivel=combustivel;
     }
 
@@ -35,10 +36,6 @@ private Combustivel combustivel;
 
     public double getCilindrada() {
         return cilindrada;
-    }
-
-    public double getkm() {
-        return km;
     }
 
     public int calcularIdade(){
@@ -121,6 +118,10 @@ private Combustivel combustivel;
             vencedorTorneio.exibirDetalhes();
         }
         return vencedorTorneio;
+    }
+
+    public double consumo(int km){
+        return km*consumo/100;
     }
 
 }
