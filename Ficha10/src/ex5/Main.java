@@ -18,6 +18,8 @@ public class Main {
 
         aMinhaAgenda.addPessoas(bernardo);
 
-        // aMinhaAgenda.exibirDetalhes();
+        aMinhaAgenda.exibirDetalhes();
+
+        System.out.println(contactos.get(0).getNome());
     }
 }
