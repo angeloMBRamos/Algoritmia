@@ -3,11 +3,11 @@ package ex5;
 import java.util.ArrayList;
 
 public class Agenda {
-    ArrayList<Pessoa> listaPessoa;
-    Pessoa pessoa;
+    private ArrayList<Pessoa> listaPessoa;
+    private Pessoa pessoa;
 
-    public Agenda(ArrayList<Pessoa> pessoa) {
-        this.listaPessoa = pessoa;
+    public Agenda(ArrayList<Pessoa> listaPessoa) {
+        this.listaPessoa = listaPessoa;
     }
 
     public void addPessoas(Pessoa pessoaNova){
