@@ -35,8 +35,8 @@ public class Competicao {
         this.atletas.add(atletaNovo);
     }
 
-    public void addCompeticao(Competicao competicao){
-        this.competicaoArrayList.add(competicao);
+    public void addCompeticao(Competicao novaCompeticao){
+        this.competicaoArrayList.add(novaCompeticao);
     }
 
     public void exibirDetalhesAtletas(){
