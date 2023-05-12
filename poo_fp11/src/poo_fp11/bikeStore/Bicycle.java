@@ -15,4 +15,32 @@ public class Bicycle {
         this.price = price;
         this.adjustableSeatPost = adjustableSeatPost;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getNumberOfGears() {
+        return numberOfGears;
+    }
+
+    public String getMainColor() {
+        return mainColor;
+    }
+
+    public float getWheelSize() {
+        return wheelSize;
+    }
+
+    public float getBikeLength() {
+        return bikeLength;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public boolean isAdjustableSeatPost() {
+        return adjustableSeatPost;
+    }
 }

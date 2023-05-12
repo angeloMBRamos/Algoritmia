@@ -3,6 +3,7 @@ package poo_fp11.bikeStore;
 import java.util.ArrayList;
 
 public class MountainBike extends Bicycle{
+
     private int numberOfligths;
     private MountainBikeSuspension tipoSuspensao;
     private ArrayList<BikeTools> bikeTools;
@@ -24,6 +25,10 @@ public class MountainBike extends Bicycle{
 
     public ArrayList<BikeTools> getBikeTools() {
         return bikeTools;
+    }
+
+    public void descer(){
+        System.out.println("Desceu a montanha!");
     }
 
 }
