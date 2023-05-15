@@ -12,8 +12,8 @@ public class BicycleManagment {
     }
 
     public void exibirDetalhes(){
-        for (Bicycle bicycle : bicycles) {
-
+        System.out.println("\n*****Todas as bicicletas da loja*****");
+        for (Bicycle bicycle : this.bicycles) {
             System.out.println("ID: " + bicycle.getId());
             System.out.println("Price: " + bicycle.getPrice());
             System.out.println("Main color: " + bicycle.getMainColor());
@@ -24,6 +24,7 @@ public class BicycleManagment {
 
             if(bicycle instanceof MountainBike){
                 MountainBike bikeMonte = (MountainBike) bicycle;
+                System.out.println("Bicicleta do monte: ");
                 System.out.println("Ferramentas: "+bikeMonte.getBikeTools());
                 System.out.println("Suspensao: "+ bikeMonte.getTipoSuspensao());
                 System.out.println("Number of lights " + bikeMonte.getNumberOfligths());
@@ -31,6 +32,7 @@ public class BicycleManagment {
             }
             if(bicycle instanceof DeliveryBike){
                 DeliveryBike bikeEntregas = (DeliveryBike) bicycle;
+                System.out.println("Bicicleta de entregas: ");
                 System.out.println("Sponsor: " + bikeEntregas.getSponsor());
                 System.out.println("Number of sponsors: " + bikeEntregas.getNumberOfSponsor());
                 System.out.println("With front basket: " + bikeEntregas.isFrontBasket());
