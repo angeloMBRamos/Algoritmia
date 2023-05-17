@@ -30,6 +30,11 @@ public class Main {
         System.out.println();
        camiao.viagem(400, 700);
 
+        System.out.println();
+
+        mota.imprimirFicheiro("src/poo_fp11/stand/Mota.txt");
+
+
 
     }
 }
