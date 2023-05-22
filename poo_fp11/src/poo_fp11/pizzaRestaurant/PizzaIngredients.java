@@ -4,9 +4,9 @@ import poo_fp11.pizzaRestaurant.Ingredients.Ingredient;
 
 public class PizzaIngredients {
     private Ingredient ingredient;
-    private float quantity;
+    private double quantity;
 
-    public PizzaIngredients(Ingredient ingredient, float quantity) {
+    public PizzaIngredients(Ingredient ingredient, double quantity) {
         this.ingredient = ingredient;
         this.quantity = quantity;
     }
@@ -15,7 +15,7 @@ public class PizzaIngredients {
         return ingredient;
     }
 
-    public float getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
