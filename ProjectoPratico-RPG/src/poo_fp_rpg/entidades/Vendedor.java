@@ -1,6 +1,8 @@
 package poo_fp_rpg.entidades;
 
+import poo_fp_rpg.items.Arma;
 import poo_fp_rpg.items.ItemHeroi;
+import poo_fp_rpg.items.PocaoHP;
 
 import java.util.ArrayList;
 
@@ -19,13 +21,25 @@ public class Vendedor {
     }
 
     public void vender(Heroi heroi){
-        int ouroEmCarteira=0;
         for (ItemHeroi item : this.itemHerois) {
             if (heroi.getOuro() > item.getPreco()) {
-                ouroEmCarteira = heroi.getOuro() - item.getPreco();
-
+                if(item instanceof PocaoHP){
+                    PocaoHP pocaoHP = (PocaoHP) item;
+                    heroi.setOuro(heroi.getOuro()-item.getPreco());
+                    System.out.println("Agora tenho " + heroi.getOuro() + " moedas de ouro.");
+                    heroi.getPocoes().add(0, pocaoHP);
+                    System.out.println();
+                }
+                if( item instanceof Arma){
+                    Arma arma = (Arma) item;
+                    heroi.setOuro(heroi.getOuro()-item.getPreco());
+                    System.out.println("Agora tenho " + heroi.getOuro() + " moedas de ouro.");
+                    heroi.setArma(arma);
+                    System.out.println("Comprei uma arma nova: " + heroi.getArma());
+                }
+            }else {
+                System.out.println("Não tens dinheiro suficiente para efetura a compra");
             }
         }
-
     }
 }
