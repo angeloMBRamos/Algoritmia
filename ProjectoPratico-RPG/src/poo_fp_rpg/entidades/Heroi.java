@@ -45,19 +45,40 @@ abstract public class Heroi extends Entidade{
         this.nivel = nivel;
     }
 
-    abstract public void atacar(NPC inimigo);
+    abstract public boolean atacar(NPC inimigo);
 
     public void usarPocao(){
         Scanner input = new Scanner(System.in);
-        String opcao;
-        System.out.println("Qual a poção que quer usar?");
+        //String opcao;
+        /*System.out.println("Qual a poção que quer usar?");
         opcao = input.next();
         for(PocaoHP item : this.pocoes){
-            if(opcao.equals(item)){
-                setNivel(item.getVida() + this.getNivel());
-                System.out.println("Passou a ter " + this.getNivel() + " de vida");
+            if(opcao.equals(item.getNome())){
+                setVida(getVida() + item.getVida());
+                System.out.println("Passou a ter " + this.getVida() + " de vida");
             }
+        }*/
+
+
+        int contador = 0;
+        for(PocaoHP pocao : this.getPocoes()){
+            System.out.println("Bolsa de poções: "+ contador + " " + pocao.getNome() + " Preço: "+pocao.getPreco() +" Ouro: " +pocao.getVida());
+            contador++;
+        }
+        System.out.println("Qual deseja usar?");
+        int opcao = input.nextInt();
+        int pontosVida = getPocoes().get(opcao).getVida();
+        System.out.println("Tinha isto de vida " + this.getVida());
+        this.setVida(this.getVida() + pontosVida);
+        System.out.println("Passou a ter: " + this.getVida());
+
+        this.getPocoes().remove(opcao);
+        contador--;
+
+        for(PocaoHP pocao : this.getPocoes()){
+            System.out.println("Bolsa de poções: "+ contador + " " + pocao.getNome() + " Preço: "+pocao.getPreco() +" Ouro: " +pocao.getVida());
         }
     }
+
 
 }

@@ -25,7 +25,11 @@ abstract public class Entidade {
     }
 
     public void setVida(int vida) {
+
         this.vida = vida;
+    }
+    public void setForca(int forca) {
+        this.forca = forca;
     }
 
     abstract public void mostrarDetalhes();

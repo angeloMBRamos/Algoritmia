@@ -20,8 +20,10 @@ public class Arma extends ItemHeroi{
     public void mostrarDetalhes() {
         System.out.println("Nome: " + getNome());
         System.out.println("Preço em moedas de ouro: " + getPreco());
-        //System.out.println("Tipo de herói: " + getTipoHeroi());
         System.out.println("Quantidade de dano: " + this.ataque);
+        for(Heroi tipoHeroi : getTipoHeroi()){
+            System.out.println("Tipo de herói: " + tipoHeroi.getNome());
+        }
         System.out.println();
     }
 }

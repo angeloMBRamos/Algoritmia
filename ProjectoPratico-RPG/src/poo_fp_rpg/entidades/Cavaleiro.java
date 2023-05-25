@@ -12,10 +12,25 @@ public class Cavaleiro extends Heroi{
     }
 
     @Override
-    public void atacar(NPC inimigo) {
-        setVida(this.getVida()-(inimigo.getForca() * Integer.parseInt("0.8")));
-        inimigo.setVida(inimigo.getVida() - (this.getForca() + getArma().getAtaque()));
+    public boolean atacar(NPC inimigo) {
+
+        while (this.getVida() > 0 && inimigo.getVida() > 0) {
+            this.setVida(this.getVida() - (inimigo.getForca() * 80/100));
+            inimigo.setVida(inimigo.getVida() - (this.getForca() + this.getArma().getAtaque()));
+        }
+        if (this.getVida() > 0) {
+            System.out.println("O inimigo:"  + inimigo.getNome() + " perdeu");
+            this.setNivel(this.getNivel() + 1);
+            this.setVida(this.getVida() + 10);
+            this.setForca(this.getForca() + 1);
+            this.setOuro(this.getOuro() + 10);
+            return true;
+        } else {
+            System.out.println("O heroi: " + this.getNome() + " perdeu.");
+            return false;
+        }
     }
+
 
     @Override
     public void mostrarDetalhes() {
@@ -24,6 +39,9 @@ public class Cavaleiro extends Heroi{
         System.out.println("Força: " + getForca());
         System.out.println("Nivel: " + getNivel());
         System.out.println("Ouro: " + getOuro());
-        System.out.println("Arma: " + getArma());
+        for(PocaoHP listaPocoes : getPocoes()){
+            System.out.println("Lista de poções: " + listaPocoes.getNome());
+        }
+        System.out.println("Arma: " + getArma().getNome());
     }
 }

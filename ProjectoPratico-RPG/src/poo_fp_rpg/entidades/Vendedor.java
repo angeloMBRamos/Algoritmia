@@ -14,15 +14,15 @@ public class Vendedor {
     }
 
     public void imprimirInventário(){
-        for (ItemHeroi itemHeroi : this.itemHerois) {
-            System.out.println("Nome: " + itemHeroi.getNome());
-            System.out.println("Preço: " + itemHeroi.getPreco());
+        for (ItemHeroi stock : this.itemHerois) {
+            System.out.println("Nome: " + stock.getNome());
+            System.out.println("Preço: " + stock.getPreco());
         }
     }
 
     public void vender(Heroi heroi){
         for (ItemHeroi item : this.itemHerois) {
-            if (heroi.getOuro() > item.getPreco()) {
+            if (heroi.getOuro() >= item.getPreco()) {
                 if(item instanceof PocaoHP){
                     PocaoHP pocaoHP = (PocaoHP) item;
                     heroi.setOuro(heroi.getOuro()-item.getPreco());
@@ -35,10 +35,10 @@ public class Vendedor {
                     heroi.setOuro(heroi.getOuro()-item.getPreco());
                     System.out.println("Agora tenho " + heroi.getOuro() + " moedas de ouro.");
                     heroi.setArma(arma);
-                    System.out.println("Comprei uma arma nova: " + heroi.getArma());
+                    System.out.println("Comprei uma arma nova: " + heroi.getArma().getNome());
                 }
             }else {
-                System.out.println("Não tens dinheiro suficiente para efetura a compra");
+                System.out.println("Não tens dinheiro suficiente para efetuar a compra");
             }
         }
     }
