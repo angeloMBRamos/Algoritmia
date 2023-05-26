@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class PocaoHP extends ItemHeroi{
     private int vida;
 
-    public PocaoHP(String nome, int preco, ArrayList<Heroi> tipoHeroi, int vida) {
+    public PocaoHP(String nome, int preco, ArrayList<TipoHeroi> tipoHeroi, int vida) {
         super(nome, preco, tipoHeroi);
         this.vida = vida;
     }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Arma extends ItemHeroi{
     private int ataque;
 
-    public Arma(String nome, int preco, ArrayList<Heroi> tipoHeroi, int ataque) {
+    public Arma(String nome, int preco, ArrayList<TipoHeroi> tipoHeroi, int ataque) {
         super(nome, preco, tipoHeroi);
         this.ataque = ataque;
     }
@@ -21,8 +21,9 @@ public class Arma extends ItemHeroi{
         System.out.println("Nome: " + getNome());
         System.out.println("Preço em moedas de ouro: " + getPreco());
         System.out.println("Quantidade de dano: " + this.ataque);
-        for(Heroi tipoHeroi : getTipoHeroi()){
-            System.out.println("Tipo de herói: " + tipoHeroi.getNome());
+
+        for(TipoHeroi tipoHeroiPermitidos : this.getTipoHeroi()){
+            System.out.println("Tipo de herói: " + tipoHeroiPermitidos.toString());
         }
         System.out.println();
     }

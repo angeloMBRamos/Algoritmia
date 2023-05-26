@@ -11,12 +11,12 @@ abstract public class Heroi extends Entidade{
     private ArrayList<PocaoHP> pocoes;
     private Arma arma;
 
-    public Heroi(String nome, int vida, int forca, int nivel, int ouro, ArrayList<PocaoHP> pocoes, Arma arma) {
+    public Heroi(String nome, int vida, int forca, int nivel, int ouro) {
         super(nome, vida, forca);
         this.nivel = nivel;
         this.ouro = ouro;
-        this.pocoes = pocoes;
-        this.arma = arma;
+        this.pocoes = new ArrayList<>();
+
     }
 
     public int getNivel() {
@@ -35,14 +35,20 @@ abstract public class Heroi extends Entidade{
         return arma;
     }
 
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
     public void setOuro(int ouro) {
         this.ouro = ouro;
     }
+
+    public void setPocoes(ArrayList<PocaoHP> pocoes) {
+        this.pocoes = pocoes;
+    }
+
     public void setArma(Arma arma) {
         this.arma = arma;
-    }
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
     }
 
     abstract public boolean atacar(NPC inimigo);

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class Arqueiro extends Heroi{
 
-    public Arqueiro(String nome, int vida, int forca, int nivel, int ouro, ArrayList<PocaoHP> pocoes, Arma arma) {
-        super(nome, vida, forca, nivel, ouro, pocoes, arma);
+    public Arqueiro(String nome, int vida, int forca, int nivel, int ouro) {
+        super(nome, vida, forca, nivel, ouro);
     }
 
     @Override
@@ -38,10 +38,10 @@ public class Arqueiro extends Heroi{
         System.out.println("Força: " + getForca());
         System.out.println("Nivel: " + getNivel());
         System.out.println("Ouro: " + getOuro());
+        System.out.println("Arma: " + getArma().getNome());
         for(PocaoHP listaPocoes : getPocoes()){
             System.out.println("Lista de poções: " + listaPocoes.getNome());
         }
-        System.out.println("Arma: " + getArma().getNome());
     }
 
 }
