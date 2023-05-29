@@ -23,9 +23,11 @@ public class Arqueiro extends Heroi{
             this.setVida(this.getVida() + 10);
             this.setForca(this.getForca() + 1);
             this.setOuro(this.getOuro() + 10);
+            System.out.println();
             return true;
         } else {
             System.out.println("O heroi: " + this.getNome() + " perdeu.");
+            System.out.println();
             return false;
         }
 
@@ -38,10 +40,14 @@ public class Arqueiro extends Heroi{
         System.out.println("Força: " + getForca());
         System.out.println("Nivel: " + getNivel());
         System.out.println("Ouro: " + getOuro());
-        System.out.println("Arma: " + getArma().getNome());
+        if(this.getArma() == null){
+            System.out.println("Arma: Não possui arma");
+        }else {
+            System.out.println("Arma: " + getArma().getNome());
+        }
         for(PocaoHP listaPocoes : getPocoes()){
             System.out.println("Lista de poções: " + listaPocoes.getNome());
         }
+        System.out.println();
     }
-
 }

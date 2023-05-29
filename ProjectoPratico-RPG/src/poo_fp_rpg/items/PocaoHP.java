@@ -16,11 +16,15 @@ public class PocaoHP extends ItemHeroi{
         return vida;
     }
 
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
     @Override
     public void mostrarDetalhes() {
         System.out.println("Nome: " + getNome());
         System.out.println("Preço em moedas de ouro: " + getPreco());
-        //System.out.println("Tipo de herói: " + getTipoHeroi());
+        System.out.println("Tipo de herói: " + getTipoHeroi());
         System.out.println("Quantidade de vida: " + this.vida);
         System.out.println();
     }

@@ -55,36 +55,21 @@ abstract public class Heroi extends Entidade{
 
     public void usarPocao(){
         Scanner input = new Scanner(System.in);
-        //String opcao;
-        /*System.out.println("Qual a poção que quer usar?");
-        opcao = input.next();
-        for(PocaoHP item : this.pocoes){
-            if(opcao.equals(item.getNome())){
-                setVida(getVida() + item.getVida());
-                System.out.println("Passou a ter " + this.getVida() + " de vida");
-            }
-        }*/
-
 
         int contador = 0;
         for(PocaoHP pocao : this.getPocoes()){
-            System.out.println("Bolsa de poções: "+ contador + " " + pocao.getNome() + " Preço: "+pocao.getPreco() +" Ouro: " +pocao.getVida());
+            System.out.println("Bolsa de poções: ");
+            System.out.println("Item: " + contador);
+            System.out.println(pocao.getNome() + " Vida :" + pocao.getVida());
             contador++;
         }
-        System.out.println("Qual deseja usar?");
+        System.out.println("Escolha o item da sua bolsa de poções?");
         int opcao = input.nextInt();
-        int pontosVida = getPocoes().get(opcao).getVida();
-        System.out.println("Tinha isto de vida " + this.getVida());
+        int pontosVida = this.getPocoes().get(opcao).getVida();
+        System.out.println("Tinha " + this.getVida() + " de vida.");
         this.setVida(this.getVida() + pontosVida);
-        System.out.println("Passou a ter: " + this.getVida());
-
+        System.out.println("Passou a ter: " + this.getVida() + " de vida");
         this.getPocoes().remove(opcao);
-        contador--;
 
-        for(PocaoHP pocao : this.getPocoes()){
-            System.out.println("Bolsa de poções: "+ contador + " " + pocao.getNome() + " Preço: "+pocao.getPreco() +" Ouro: " +pocao.getVida());
-        }
     }
-
-
 }
