@@ -7,10 +7,23 @@ import java.util.ArrayList;
 
 public class Cavaleiro extends Heroi{
 
+    /**
+     * Construtor da classe Cavaleiro
+     * @param nome O  nome do cavaleiro
+     * @param vida A quantidade de pontos de vida do cavaleiro
+     * @param forca A força do cavaleiro
+     * @param nivel O nível do cavaleiro
+     * @param ouro A quantidade de ouro do cavaleiro
+     */
     public Cavaleiro(String nome, int vida, int forca, int nivel, int ouro) {
         super(nome, vida, forca, nivel, ouro);
     }
 
+    /**
+     * Realiza um ataque ao NPC inimigo
+     * @param inimigo O NPC inimigo a ser atacado
+     * @return  true se o herói vencer a batalha, false caso contrário
+     */
     @Override
     public boolean atacar(NPC inimigo) {
 
@@ -19,8 +32,14 @@ public class Cavaleiro extends Heroi{
             if(this.getArma() == null){
                 System.out.println("Luta sem armas");
                 inimigo.setVida(inimigo.getVida() - this.getForca());
+                System.out.println("Vida do inimigo: " + inimigo.getVida());
+                System.out.println("Vida do " + this.getNome() + ": " + this.getVida());
+
             }else{
+                inimigo.setVida(inimigo.getVida() - this.getForca());
+                System.out.println("Vida do inimigo: " + inimigo.getVida());
                 inimigo.setVida(inimigo.getVida() - (this.getForca() + this.getArma().getAtaque()));
+                System.out.println("Vida do " + this.getNome() + ": " + this.getVida());
             }
         }
         if (this.getVida() > 0) {
@@ -37,6 +56,10 @@ public class Cavaleiro extends Heroi{
             return false;
         }
     }
+
+    /**
+     * Mostra os detalhes do Heroi
+     */
     @Override
     public void mostrarDetalhes() {
         System.out.println("Nome: " + getNome());

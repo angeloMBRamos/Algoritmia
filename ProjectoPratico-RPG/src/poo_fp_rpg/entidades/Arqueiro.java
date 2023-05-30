@@ -7,19 +7,37 @@ import java.util.ArrayList;
 
 public class Arqueiro extends Heroi{
 
+    /**
+     * Contrutor da classe Arqueiro
+     * @param nome O nome do Arqueiro
+     * @param vida A quantidade de pontos de vida do Arqueiro
+     * @param forca A força do arqueiro
+     * @param nivel  O nível do arqueiro.
+     * @param ouro A quantidade de ouro do arqueiro
+     */
     public Arqueiro(String nome, int vida, int forca, int nivel, int ouro) {
         super(nome, vida, forca, nivel, ouro);
     }
 
+    /**
+     * Realiza um ataque ao NPC inimigo
+     * @param inimigo O NPC inimigo a ser atacado
+     * @return true se o herói vencer a batalha, false caso contrário
+     */
     @Override
     public boolean atacar(NPC inimigo) {
         while (this.getVida() > 0 && inimigo.getVida() > 0) {
             if(this.getArma()==null){
                 System.out.println("Luta sem armas");
                 this.setVida(this.getVida() - ((inimigo.getForca() * 10/100) + inimigo.getForca()));
+                System.out.println("Vida do " + this.getNome() + ": " + this.getVida());
+                System.out.println("Vida do inimigo: " + inimigo.getVida());
             }else{
                 inimigo.setVida(inimigo.getVida()-(this.getForca() + this.getArma().getAtaque()));
+                System.out.println("Vida do inimigo: " + inimigo.getVida());
                 this.setVida(this.getVida() - ((inimigo.getForca() * 10/100) + inimigo.getForca()));
+                System.out.println("Vida do " + this.getNome() + ": " + this.getVida());
+
             }
         }
         if (this.getVida() > 0) {
@@ -38,6 +56,9 @@ public class Arqueiro extends Heroi{
 
     }
 
+    /**
+     * Mostra os detalhes do Heroi
+     */
     @Override
     public void mostrarDetalhes() {
         System.out.println("Nome: " + getNome());

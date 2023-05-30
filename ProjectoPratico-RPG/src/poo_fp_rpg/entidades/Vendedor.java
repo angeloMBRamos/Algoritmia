@@ -14,10 +14,19 @@ public class Vendedor {
     static Scanner input = new Scanner(System.in);
     private ArrayList<ItemHeroi> inventario;
 
+    /**
+     * Construtor da classe Vendedor
+     * @param inventario O inventário do vendedor
+     */
     public Vendedor(ArrayList<ItemHeroi> inventario) {
         this.inventario = inventario;
     }
 
+    /**
+     * Imprime o inventário do vendedor
+     * Percorre a lista de itens do inventário e imprime os detalhes de cada item, identificando-o pelo número do item
+     * Os itens podem ser poções de cura (PocaoHP) ou armas (Arma)
+     */
     public void imprimirInventario() {
         int contador = 0;
         for (ItemHeroi stock : this.inventario) {
@@ -33,14 +42,18 @@ public class Vendedor {
                 arma.mostrarDetalhes();
             }
         }
+        System.out.println("----------------------------------");
     }
 
+    /**
+     * Realiza a venda de itens para o herói
+     * @param heroi O herói a comprar
+     */
     public void vender(Heroi heroi) {
         boolean comprar = true;
         boolean permitidoComprar = false;
         int escolhaInicial;
         while (comprar) {
-            System.out.println();
             System.out.println("Escolha o numero do item que pretende comprar ou carregue na tecla zero para continuar o jogo sem comprar ");
             System.out.println("A sua resposta: ");
             escolhaInicial = input.nextInt();
@@ -53,6 +66,9 @@ public class Vendedor {
                 for (TipoHeroi heroiPermitido : item.getTipoHeroi()) {
                     if (heroiPermitido.toString().equals(heroi.getClass().getSimpleName().toUpperCase())) {
                         permitidoComprar = true;
+                    }else {
+                        System.out.println("Não tens permissão para comprar esse item.");
+                        System.out.println("-------------------------------------------------");
                     }
                     if(permitidoComprar){
                         if (heroi.getOuro() >= item.getPreco()) {
@@ -67,7 +83,6 @@ public class Vendedor {
                                 break;
                             } else if (item instanceof PocaoHP) {
                                 PocaoHP pocao = (PocaoHP) item;
-                                //heroi.getPocoes().remove(0);
                                 heroi.getPocoes().add(pocao);
                                 heroi.getPocoes().size();
                                 this.inventario.remove(pocao);
@@ -83,6 +98,7 @@ public class Vendedor {
                     }
                 }
                 heroi.mostrarDetalhes();
+                System.out.println("--------------------------------------------");
             }
         }
     }
