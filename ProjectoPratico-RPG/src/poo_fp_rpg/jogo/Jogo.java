@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Jogo {
-
     static Scanner input = new Scanner(System.in);
 
     public static Heroi criacao(){
@@ -25,7 +24,6 @@ public class Jogo {
         /*ArrayList<PocaoHP> listaPocoes = new ArrayList<>();
         PocaoHP pocaoInicial = new PocaoHP("sem poções", 0, permissaoGeral, 0);
         listaPocoes.add(pocaoInicial);*/
-
        // Arma inicial = new Arma("sem arma",0,permissaoGeral,0);
 
         Scanner input = new Scanner(System.in);
@@ -184,47 +182,66 @@ public class Jogo {
 
         return new Vendedor(stockVendedor);
     }
-
     public static void sala1(Heroi heroi){
-        NPC bot1 = new NPC("cincoPontes", 100, 20);
+        NPC bot1 = new NPC("Cinco Pontes", 100, 20);
         System.out.println("Aqui vai enfrentar o " + bot1.getNome() + " que tem o poder das pontes");
-        
         heroi.atacar(bot1);
     }
-
     public static void sala2(Heroi heroi){
         NPC bot2 = new NPC("Paralelo", 80, 25);
         System.out.println("Aqui vai enfrentar o " + bot2.getNome() + " que tem o poder das pedras da calçada");
         heroi.atacar(bot2);
     }
+    public static void sala3(Heroi heroi){
+        NPC bot3 = new NPC("Os Velhotes", 85, 23);
+        System.out.println("Aqui vai enfrentar o " + bot3.getNome() + " que tem o poder das pedras da calçada");
+        heroi.atacar(bot3);
+    }
 
     public static boolean labirinto() {
 
-
+        boolean continueGame= true;
         Heroi heroi= criacao();
         Vendedor vendedor = trafico();
         vendedor.imprimirInventario();
         vendedor.vender(heroi);
-        //vendedor.imprimirInventario();
-
-
-        /*heroi.usarPocao();
-        heroi.mostrarDetalhes();
-        vendedor.vender(heroi);
-        heroi.usarPocao();
-        heroi.mostrarDetalhes();
-        System.out.println();*/
 
         System.out.println("Chegas-te ao primeiro momento de decisão de vida ou morte");
-        System.out.println("A opção 1 leva-te para a sala 1 - Batalha das 5 pontes!");
-        System.out.println("A opção 2 leva-te para a sala2 - Batalha dos 4 caminhos!");
+        System.out.println("A opção 1: Sala 1 - Batalha das 5 pontes!");
+        System.out.println("A opção 2: Sala2 - Batalha dos 4 caminhos!");
+        System.out.println("A opção 0: Sair do Jogo");
         System.out.println("Qual a sua opção?");
-        int opcao = input.nextInt();
-        if(opcao == 1){
-            sala1(heroi);
-        }else {
-            sala2(heroi);
-        }
+        do {
+            int opcao = input.nextInt();
+            switch (opcao) {
+                case 0:
+                    continueGame = false;
+                    break;
+                case 1:
+                    sala1(heroi);
+                    System.out.println("Escolhe a próxima batalha:");
+                    System.out.println("A opção 1 leva-te para a sala 2 - Batalha dos 4 caminhos!");
+                    System.out.println("A opção 2 leva-te para a sala3 - Batalha do Vinho do Porto!");
+                    System.out.println("Qual a sua opção?");
+                    int escolha = input.nextInt();
+                    if(escolha == 1){
+                        opcao = 2;
+                    }else {
+                        opcao = 3;
+                    }
+                    break;
+                case 2:
+                    vendedor.imprimirInventario();
+                    vendedor.vender(heroi);
+                    sala2(heroi);
+                    break;
+                case 3:
+                    sala3(heroi);
+                    break;
+                default:
+                    System.out.println("Escolha errada. Tente novamente!!!!!");
+            }
+        }while(continueGame);
 
         return true;
     }
@@ -240,6 +257,7 @@ public class Jogo {
             System.out.println("Parabéns venceu todas as batalhas e chegou ao fim do jogo!");
         }else{
             System.out.println("Game Over!");
+            System.out.println("Descansa e entra na aventura novamente!");
         }
 
 

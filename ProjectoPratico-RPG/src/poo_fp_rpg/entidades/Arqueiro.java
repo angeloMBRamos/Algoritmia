@@ -14,8 +14,13 @@ public class Arqueiro extends Heroi{
     @Override
     public boolean atacar(NPC inimigo) {
         while (this.getVida() > 0 && inimigo.getVida() > 0) {
-           inimigo.setVida(inimigo.getVida()-(this.getForca() + this.getArma().getAtaque()));
-           this.setVida(this.getVida() - ((inimigo.getForca() * 10/100) + inimigo.getForca()));
+            if(this.getArma()==null){
+                System.out.println("Luta sem armas");
+                this.setVida(this.getVida() - ((inimigo.getForca() * 10/100) + inimigo.getForca()));
+            }else{
+                inimigo.setVida(inimigo.getVida()-(this.getForca() + this.getArma().getAtaque()));
+                this.setVida(this.getVida() - ((inimigo.getForca() * 10/100) + inimigo.getForca()));
+            }
         }
         if (this.getVida() > 0) {
             System.out.println("O inimigo:"  + inimigo.getNome() + " perdeu");
