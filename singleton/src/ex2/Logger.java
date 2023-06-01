@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Logger {
 
-    File file;
+    private File file;
 
     /**
      * Único objeto desta classe
@@ -17,6 +17,7 @@ public class Logger {
      * @param file
      */
     private Logger(File file) {
+
         this.file = file;
     }
 
@@ -40,7 +41,7 @@ public class Logger {
 
         try  {
             FileWriter write = new FileWriter(this.file,true);
-            write.write(log);
+            write.write(log + "\n");
             write.close();
         } catch (IOException ex) {
             System.out.println("Não escreve! " + ex);
@@ -58,7 +59,7 @@ public class Logger {
             while(readFile.hasNext()){
                 System.out.println(readFile.nextLine());
         }
-    }catch (FileNotFoundException ex){
+        }catch (FileNotFoundException ex){
             System.out.println("File not found! " + ex);
 
         }

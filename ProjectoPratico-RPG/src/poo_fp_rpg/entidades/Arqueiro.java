@@ -31,6 +31,7 @@ public class Arqueiro extends Heroi{
                 System.out.println("Luta sem armas");
                 this.setVida(this.getVida() - ((inimigo.getForca() * 10/100) + inimigo.getForca()));
                 System.out.println("Vida do " + this.getNome() + ": " + this.getVida());
+                inimigo.setVida(inimigo.getVida()-this.getForca());
                 System.out.println("Vida do inimigo: " + inimigo.getVida());
             }else{
                 inimigo.setVida(inimigo.getVida()-(this.getForca() + this.getArma().getAtaque()));
