@@ -9,9 +9,11 @@ public class main {
 
         //fileManager.setRootDirectory("src/ex4");
 
+        //Criar ficheiros
         fileManager.creatFile("novo-ficheiro.txt");
 
-        //fileManager.deleteFile("novo-ficheiro");
+        //Apagar ficheiros
+        fileManager.deleteFile("novo-ficheiro");
 
     }
 }
