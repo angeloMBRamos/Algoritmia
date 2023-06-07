@@ -5,23 +5,22 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.example.ex2.StringUtils.isPalindrome;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringUtilsTest {
 
-    private StringUtils stringUtils;
-
-    @BeforeEach
-    public void setUp(){
-        stringUtils = new StringUtils();
-    }
-
     @Test
     public void testPalindromes(){
-        assertTrue(stringUtils.isPalindrome("ana"));
-        assertTrue(isPalindrome("Ana"));
+        assertTrue(StringUtils.isPalindrome("ana"));
+        assertTrue(StringUtils.isPalindrome("Ana"));
+        assertTrue(StringUtils.isPalindrome(""));
+        assertFalse(StringUtils.isPalindrome("Àna"));
+        assertTrue(StringUtils.isPalindrome("ana lol ana"));
+        assertFalse(StringUtils.isPalindrome("ana lool lool"));
+        assertFalse(StringUtils.isPalindrome("an-a"));
+
     }
+
 
 
 

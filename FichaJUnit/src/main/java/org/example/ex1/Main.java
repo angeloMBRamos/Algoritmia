@@ -1,4 +1,4 @@
-package ex1;
+package org.example.ex1;
 
 import org.example.ex1.Calculator;
 
