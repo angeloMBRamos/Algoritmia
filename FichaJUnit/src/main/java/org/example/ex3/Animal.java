@@ -17,6 +17,7 @@ public class Animal {
     public boolean estaComFome() {
         return comFome;
     }
+
     public Alimento getTipoAlimentacao() {
         return tipoAlimentacao;
     }

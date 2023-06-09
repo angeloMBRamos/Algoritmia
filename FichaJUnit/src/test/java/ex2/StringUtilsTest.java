@@ -10,15 +10,19 @@ import static org.junit.jupiter.api.Assertions.*;
 public class StringUtilsTest {
 
     @Test
-    public void testPalindromes(){
+    public void testPalindromeValido(){
         assertTrue(StringUtils.isPalindrome("ana"));
         assertTrue(StringUtils.isPalindrome("Ana"));
         assertTrue(StringUtils.isPalindrome(""));
-        assertFalse(StringUtils.isPalindrome("Àna"));
         assertTrue(StringUtils.isPalindrome("ana lol ana"));
+    }
+
+    @Test
+    public void testPalindromeInvalido(){
+        assertFalse(StringUtils.isPalindrome("Àna"));
         assertFalse(StringUtils.isPalindrome("ana lool lool"));
         assertFalse(StringUtils.isPalindrome("an-a"));
-
+        assertFalse(StringUtils.isPalindrome(null));
     }
 
 

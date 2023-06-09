@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ex6.CarroTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2023-06-09T15:55:44" hostname="DESKTOP-7RMIL64" time="0.06">
+  <properties/>
+  <testcase name="LigarCarroMaisDe30AnosDiesel()" classname="ex6.CarroTest" time="0.034"/>
+  <testcase name="LigarCarroCom30AnosPotenciaAlta()" classname="ex6.CarroTest" time="0.002"/>
+  <testcase name="testarCorridaEmpate()" classname="ex6.CarroTest" time="0.002"/>
+  <testcase name="testarCorridaCarro1EmpatePotenciaEmpateCilindradaMaisRecente()" classname="ex6.CarroTest" time="0.001"/>
+  <testcase name="testarCorridaCarro2EmpatePotenciaEmpateCilindradaMaisRecente()" classname="ex6.CarroTest" time="0.0"/>
+  <testcase name="LigarCarroMenosDe30AnosPotenciaBaixa()" classname="ex6.CarroTest" time="0.0"/>
+  <testcase name="calcularIdadeteste()" classname="ex6.CarroTest" time="0.001"/>
+  <testcase name="LigarCarroMaisDe30NotDiesel()" classname="ex6.CarroTest" time="0.0"/>
+  <testcase name="testarCorridaCarro2VencedorMaiorPotencia()" classname="ex6.CarroTest" time="0.0"/>
+  <testcase name="calcularIdadeValoresNegativos()" classname="ex6.CarroTest" time="0.002"/>
+  <testcase name="calcularIdadeSuperiorAnoCorrente()" classname="ex6.CarroTest" time="0.002"/>
+  <testcase name="testarCorridaCarro1EmpatePotenciaMaiorCilindrada()" classname="ex6.CarroTest" time="0.0"/>
+  <testcase name="testarCorridaCarro2EmpatePotenciaMaiorCilindrada()" classname="ex6.CarroTest" time="0.0"/>
+  <testcase name="LigarCarroMenosDe30AnosPotenciaAlta()" classname="ex6.CarroTest" time="0.0"/>
+  <testcase name="testarCorridaCarro1VencedorMaiorPotencia()" classname="ex6.CarroTest" time="0.001"/>
+  <system-out><![CDATA[Deita um pouco de fumo...Custa a pegar...O carro estÃ¡ ligado!
+Vrum-vrum-vrum
+O carro estÃ¡ ligado!
+VRUUUMMMMM
+O carro estÃ¡ ligado!
+Vrummmmmmmmmmm
+Custa a pegar...O carro estÃ¡ ligado!
+Vrum-vrum-vrum
+Custa a pegar...O carro estÃ¡ ligado!
+Vrum-vrum-vrum
+O carro estÃ¡ ligado!
+VRUUUMMMMM
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

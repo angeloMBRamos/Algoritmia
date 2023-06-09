@@ -17,6 +17,12 @@ public class CalculatorTest {
     public void testAdd() {
         int result = calculator.add(2, 3);
         assertEquals(5, result);
+        assertEquals(-5, calculator.add(-2, -3));
+        assertEquals(0, calculator.add(0,0));
+
+        // 2 147 483 647
+        assertEquals(2147483646, calculator.add(2147483645, 1 ));
+        assertEquals(2147483647, calculator.add(2147483646, 1 ));
     }
     @Test    public void testDivide() {
         int result = calculator.divide(10, 2);

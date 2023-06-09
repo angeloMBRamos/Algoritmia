@@ -19,8 +19,23 @@ public class AnimalTest {
     }
 
     @Test
-    public void testComer(){
+    public void testeComerValido(){
+        animal.comer(Alimento.CARNE);
+        assertTrue(animal.estaComFome());
         assertTrue(animal.comer(Alimento.VEGETAIS));
-        assertFalse(animal.comer(Alimento.CARNE));
     }
+
+    @Test
+    public void testeComerInvalido(){
+        animal.comer(Alimento.VEGETAIS);
+        assertFalse(animal.estaComFome());
+    }
+
+    @Test
+    public void testeComerNull(){
+        animal.comer(null);
+        assertTrue(animal.estaComFome());
+    }
+
+
 }
