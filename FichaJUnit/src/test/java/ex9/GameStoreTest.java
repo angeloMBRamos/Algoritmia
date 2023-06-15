@@ -5,10 +5,12 @@ import org.example.ex9.VideoGame;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class GameStoreTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+public class GameStoreTest {
     private GameStore gameStore;
     private VideoGame jogo1;
+
     @BeforeEach
     public void setUp(){
         this.gameStore = new GameStore();
@@ -18,5 +20,21 @@ public class GameStoreTest {
     @Test
     public void addGameToStockTeste(){
         gameStore.addGameToStock(jogo1);
+        assertEquals(1,gameStore.getStock().size());
+    }
+
+    @Test
+    public void sellGametest(){
+        gameStore.addGameToStock(jogo1);
+        gameStore.sellGame(0);
+        assertEquals(0, gameStore.getStock().size());
+        assertEquals(1, gameStore.getSales().size());
+    }
+
+    @Test
+    public void calcularLucroTest(){
+        gameStore.addGameToStock(jogo1);
+        gameStore.sellGame(0);
+        assertEquals(5.3, gameStore.calcularLucro());
     }
 }

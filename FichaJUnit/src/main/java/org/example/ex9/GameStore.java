@@ -1,14 +1,28 @@
 package org.example.ex9;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Formatter;
+
+import static java.lang.Math.round;
 
 public class GameStore {
     private ArrayList<VideoGame> stock;
     private ArrayList<VideoGame> sales;
+
+    public ArrayList<VideoGame> getStock() {
+        return stock;
+    }
+
+    public ArrayList<VideoGame> getSales() {
+        return sales;
+    }
+
     public GameStore() {
         stock = new ArrayList<>();
         sales = new ArrayList<>();
     }
+
     public void addGameToStock(VideoGame game) {
         stock.add(game);
     }
@@ -16,6 +30,20 @@ public class GameStore {
         VideoGame game = stock.remove(index);
         sales.add(new VideoGame(game.getName(), game.getPublisher(), game.getCostPrice(),
                 game.getSellingPrice()));
+    }
+
+    public double calcularLucro(){
+
+        double lucro = 0;
+
+        for(VideoGame jogosVendidos : sales){
+            lucro += jogosVendidos.getSellingPrice()- jogosVendidos.getCostPrice();
+        }
+
+        DecimalFormat df = new DecimalFormat("0.00");
+        double lucroFormatado = Double.parseDouble(df.format(lucro));
+
+        return  lucroFormatado;
     }
     public void displayStock() {
         System.out.println("Stock:");
