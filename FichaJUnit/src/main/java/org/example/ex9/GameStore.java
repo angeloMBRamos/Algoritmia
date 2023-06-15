@@ -1,6 +1,7 @@
 package org.example.ex9;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Formatter;
 
@@ -36,14 +37,11 @@ public class GameStore {
 
         double lucro = 0;
 
-        for(VideoGame jogosVendidos : sales){
-            lucro += jogosVendidos.getSellingPrice()- jogosVendidos.getCostPrice();
+        for(VideoGame jogosVendidos : sales) {
+            lucro += jogosVendidos.getSellingPrice() - jogosVendidos.getCostPrice();
         }
 
-        DecimalFormat df = new DecimalFormat("0.00");
-        double lucroFormatado = Double.parseDouble(df.format(lucro));
-
-        return  lucroFormatado;
+        return lucro;
     }
     public void displayStock() {
         System.out.println("Stock:");

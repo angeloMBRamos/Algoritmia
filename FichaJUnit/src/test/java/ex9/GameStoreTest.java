@@ -5,6 +5,8 @@ import org.example.ex9.VideoGame;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.text.DecimalFormat;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameStoreTest {
@@ -35,6 +37,10 @@ public class GameStoreTest {
     public void calcularLucroTest(){
         gameStore.addGameToStock(jogo1);
         gameStore.sellGame(0);
-        assertEquals(5.3, gameStore.calcularLucro());
+
+        DecimalFormat df1 = new DecimalFormat( "#.##" );
+
+
+        assertEquals("5,3", df1.format(gameStore.calcularLucro()));
     }
 }

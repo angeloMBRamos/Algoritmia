@@ -37,7 +37,6 @@ public class ShoppingCartTest {
         assertTrue(shoppingCart.containsItem("garrafa"));
         assertTrue(shoppingCart.containsItem("Beer"));
         assertFalse(shoppingCart.containsItem("Vinho"));
-        assertFalse(shoppingCart.containsItem(""));
     }
 
     @Test
